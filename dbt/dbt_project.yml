@@ -1,0 +1,16 @@
+name: ecommerce_poc
+version: "1.0.0"
+config-version: 2
+
+profile: ecommerce_poc
+
+model-paths: ["models"]
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  ecommerce_poc:
+    +database: ECOMMERCE_POC_DB
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
